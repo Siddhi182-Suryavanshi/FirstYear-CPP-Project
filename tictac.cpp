@@ -4,7 +4,6 @@ using namespace std;
 char board[3][3];
 char currentPlayer;
 
-// Function to initialize the board
 void initializeBoard()
 {
     char ch = '1';
@@ -18,7 +17,6 @@ void initializeBoard()
     }
 }
 
-// Function to display the board
 void displayBoard()
 {
     cout << "\n";
@@ -44,7 +42,6 @@ void displayBoard()
     cout << "\n";
 }
 
-// Function to change player
 void switchPlayer()
 {
     if (currentPlayer == 'X')
@@ -53,10 +50,8 @@ void switchPlayer()
         currentPlayer = 'X';
 }
 
-// Function to check winner
 bool checkWinner()
 {
-    // Rows and Columns
     for (int i = 0; i < 3; i++)
     {
         if (board[i][0] == board[i][1] &&
@@ -68,7 +63,6 @@ bool checkWinner()
             return true;
     }
 
-    // Diagonals
     if (board[0][0] == board[1][1] &&
         board[1][1] == board[2][2])
         return true;
@@ -80,7 +74,6 @@ bool checkWinner()
     return false;
 }
 
-// Function to check draw
 bool checkDraw()
 {
     for (int i = 0; i < 3; i++)
@@ -94,8 +87,6 @@ bool checkDraw()
 
     return true;
 }
-
-// Function to make move
 void makeMove()
 {
     int choice;
